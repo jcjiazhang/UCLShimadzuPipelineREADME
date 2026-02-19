@@ -19,7 +19,7 @@ Documentation for using the UCL-Shimadzu pipeline for analysing output files fro
 
 ## Pipeline Overview
 
-![PipelineFlowChart]([images\flowchart-general.png](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/flowchart-general.png))
+![PipelineFlowChart](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/flowchart-general.png)
 
 The main analysis component is based on the [HOMER2 toolbox](https://homer-fnirs.org/)
 
@@ -301,6 +301,7 @@ Create the ```Channels2Exclude.mat``` file. This will detail the channels that a
 > |'P03'|[3;16;21;27;31]|
 > ...
 > |'P24'|[3;14;52]|
+
 
 
 
