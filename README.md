@@ -53,7 +53,7 @@ Input variables that need to be changed are between ```line 11``` to ```line 38`
 
 #### ```SD.SrcPos``` and ```SD.DetPos```
 
-![HomerGrid](images\HomerGrid.png)
+![HomerGrid](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/HomerGrid.png)
 
 It should be noted that this is completely arbitrary, each source/ detector can be labelled however you want. This is simply to indicate the relative positions of each optode in the next step.
 
@@ -76,7 +76,7 @@ A channel map can be found in the **Logical CH** tab in the **Channel Editor** o
 
 With all setups complete, simply click on run in MatLab or type ```Shimadzu2Homer``` in the console and press ```Enter```. A file selection window up popup, simply select the ```.txt``` file from *LabNIRS* and press ```Open```.
 
-![FileSelect](images\fileselect.png)
+![FileSelect](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/fileselect.png)
 
 After running the script, a ```.nirs``` file will be written in the same directory as the ```.txt``` file. This can then be used for preprocessing or other pipelines. 
 
@@ -92,11 +92,11 @@ This script carries out preprocessing on the data collected. This will produce P
 
 At this stage, the preprocessing output can be checked by looking at the MatLab workspace. These 7 data structure should be produced:
 
-![structs](images\fields-preproc.png)
+![structs](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/fields-preproc.png)
 
 The ```Data``` structure being the most important one, containing the HbO, HbR, and CBSI signals.
 
-![data](images\data-preproc.png)
+![data](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/data-preproc.png)
 
 > If the output does not contain any of the above data structures, it is possible that the toolboxes have not been configured correctly.
 
@@ -106,16 +106,16 @@ Channels are split into 3 grades:. *Good (2)*, *Acceptable (1)* and *Exclude (0)
 
 >These are examples of Intensity graphs that are rated *Good (2)*
 >
->![GoodIntensity](images\GoodIntensity.png)
+>![GoodIntensity](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/GoodIntensity.png)
 
 
 >These are examples of Intensity graphs that are rated *Acceptable (1)*
 >
->![AcceptIntensity](images\AcceptIntensity.png)
+>![AcceptIntensity](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/AcceptIntensity.png)
 
 >These are examples of Intensity graphs that are rated *Exclude (0)*
 >
->![BadIntensity](images\BadIntensity.png)
+>![BadIntensity](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/BadIntensity.png)
 
 #### PSD
 
@@ -123,17 +123,17 @@ Channels are either *Accepted (2)* or *Excluded (0)*. As illustrated, this asses
 
 >These are examples of Intensity graphs that are *Included (2)*
 >
->![GoodPSD](images\GoodPSD.png)
+>![GoodPSD](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/GoodPSD.png)
 
 >These are examples of Intensity graphs that are *Excluded (0)*
 >
->![GoodPSD](images\BadPSD.png)
+>![GoodPSD](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/BadPSD.png)
 
 #### Channel Assessment Spreadsheet
 
 There is no official way to record channel qualities, but the suggestion is to use the numbering system mentioned above to create a spread sheet. Below is an example spreadsheet for a **60-Channel** setup for **6 participants**.
 
->![ChannelChart](images\ChannelInclusionChart.png)
+>![ChannelChart](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/ChannelInclusionChart.png)
 
 With this, an initial assessment of the data quality can be visualised. In the above example, participants 07 and 08 did not produce data of good quality.
 
@@ -141,7 +141,7 @@ With this, an initial assessment of the data quality can be visualised. In the a
 
 Create a ```Channels2Exlude.mat``` file using your own script. This should be a ```Number of Subjects x 2 ``` matlab cell variable with each row named after the participant (e.g. ```'P01'```, ```'P02'``` etc). If no channels are excluded for a participant, leave the row blank. See below for an example.
 
-![channels2exlcude](images\channels2exclude.png)
+![channels2exlcude](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/channels2exclude.png)
 
 ### ```Run_GLM.m```
 
@@ -282,13 +282,13 @@ This file is automatically created by running ```Run_GLM.m```. It contains sever
 
 This will be a ```.mat``` file containing the contrast vectors. This can be created using the ```CreateContrast.m``` script or be manually written. To use ```CreateContrast.m```, first create an Excel file (```.xlsx```) with different contrasts (number of contrasts x conditions + a column of zeros for the  constant in the design matrix).
 
-![contrastsExcel](images\contrasts.png)
+![contrastsExcel](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/contrasts.png)
 
 Change the ```root``` path on ```line 6``` to the path to the newly created ```Data``` folder. Change the path for ```xlsread()``` on ```line 8``` to the ```.xlsx``` file you have just created. Change the ```contrnum``` variable on ```line 10``` to match the number of contrasts.
 
 Running the file will output a ```struct``` variable with one contrast per row. You will find that ```xCon.c``` includes the cntrast vector defined in your ```.xslx``` file.
 
-![contrastsMat](images\contrasts2.png)
+![contrastsMat](https://github.com/jcjiazhang/UCLShimadzuPipelineREADME/blob/main/images/contrasts2.png)
 
 #### ```Channels2Exclude.mat```
 
@@ -301,6 +301,7 @@ Create the ```Channels2Exclude.mat``` file. This will detail the channels that a
 > |'P03'|[3;16;21;27;31]|
 > ...
 > |'P24'|[3;14;52]|
+
 
 
 
